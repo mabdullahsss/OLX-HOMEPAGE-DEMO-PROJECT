@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OLX Pakistan Clone</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom gap for Motors and Property */
+    .custom-gap {
+      display: flex;
+      justify-content: flex-start;
+      gap: 2em;
+    }
+
+    .dropdown-content {
+      display: none; /* Hidden by default */
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      z-index: 1;
+      justify-content: space-between;
+    width: 1230px;
+    padding: 1.6rem;
+    z-index: 10;
+    }
+
+    .dropdown-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .dropdown-content.show {
+      display: flex; /* Show the dropdown when 'show' class is added */
+      flex-direction: row;
+    }
+
+    .dropdown-list {
+      width: 200px;
+    }
+
+    .dropdown-list h3 {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #1C7ED6;
+    }
+
+    .dropdown-list a {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 6px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .category-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #333;
+      margin-right: 1.5rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Category links */
+    .category-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #333;
+      margin-right: 1.5rem;
+      text-decoration: none;
+    }
+
+    .category-link:hover {
+      text-decoration: underline;
+      color: #1C7ED6;
+    }
+
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-4">
+        <div class="flex justify-start gap-12 items-center">
+          <a href="#" class="text-3xl font-bold text-gray-800">OLX</a>
+          <div class="custom-gap">
+            <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900">Motors</a>
+            <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900">Property</a>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-between items-center mt-4">
+          <div class="relative w-1/6 mb-4 sm:mb-0">
+            <select class="block appearance-none w-full bg-white border border-gray-300 rounded-md py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <option>Pakistan</option>
+              <option>India</option>
+              <option>USA</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+            </div>
+          </div>
+
+          <div class="flex-grow mx-4 mb-4 sm:mb-0">
+            <input type="text" placeholder="Find Cars, Mobile Phones and more..." class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md mr-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l6-6M8 6h8"></path>
+            </svg>
+          </button>
+
+          <div class="flex items-center space-x-4">
+            <a href="#" class="text-sm font-medium text-gray-700">Login</a>
+            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">+ SELL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Category Section -->
+  <section class="bg-white py-2 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center  space-x-4">
+        <div class="dropdown relative">
+          <a href="#" class="category-link flex items-center" id="categoryToggle">ALL CATEGORIES
+            <svg class="category-link w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-content" id="dropdownContent">
+            <div class="dropdown-menu">
+            <div class="dropdown-list">
+              <h3>Mobiles</h3>
+              <a href="#">Mobile Phones</a>
+              <a href="#">Accessories</a>
+              <a href="#">Smart Watches</a>
+              <a href="#">Tablets</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Furniture</h3>
+              <a href="#">Sofa & Chairs</a>
+              <a href="#">Beds</a>
+              <a href="#">Dining Tables</a>
+            </div>
+            </div>
+            <div class="dropdown-menu">
+            <div class="dropdown-list">
+              <h3>Mobiles</h3>
+              <a href="#">Mobile Phones</a>
+              <a href="#">Accessories</a>
+              <a href="#">Smart Watches</a>
+              <a href="#">Tablets</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Vehicles</h3>
+              <a href="#">Cars</a>
+              <a href="#">Motorcycles</a>
+              <a href="#">Boats</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Furniture</h3>
+              <a href="#">Sofa & Chairs</a>
+              <a href="#">Beds</a>
+              <a href="#">Dining Tables</a>
+            </div>
+            </div>
+            <div class="dropdown-menu">
+            <div class="dropdown-list">
+              <h3>Mobiles</h3>
+              <a href="#">Mobile Phones</a>
+              <a href="#">Accessories</a>
+              <a href="#">Smart Watches</a>
+              <a href="#">Tablets</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Vehicles</h3>
+              <a href="#">Cars</a>
+              <a href="#">Motorcycles</a>
+              <a href="#">Boats</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Furniture</h3>
+              <a href="#">Sofa & Chairs</a>
+              <a href="#">Beds</a>
+              <a href="#">Dining Tables</a>
+            </div>
+            </div>
+            <div class="dropdown-menu">
+            <div class="dropdown-list">
+              <h3>Mobiles</h3>
+              <a href="#">Mobile Phones</a>
+              <a href="#">Accessories</a>
+              <a href="#">Smart Watches</a>
+              <a href="#">Tablets</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Vehicles</h3>
+              <a href="#">Cars</a>
+              <a href="#">Motorcycles</a>
+              <a href="#">Boats</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Furniture</h3>
+              <a href="#">Sofa & Chairs</a>
+              <a href="#">Beds</a>
+              <a href="#">Dining Tables</a>
+            </div>
+            </div>
+            <div class="dropdown-menu">
+            <div class="dropdown-list">
+              <h3>Mobiles</h3>
+              <a href="#">Mobile Phones</a>
+              <a href="#">Accessories</a>
+              <a href="#">Smart Watches</a>
+              <a href="#">Tablets</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Vehicles</h3>
+              <a href="#">Cars</a>
+              <a href="#">Motorcycles</a>
+              <a href="#">Boats</a>
+            </div>
+            <div class="dropdown-list">
+              <h3>Jobs</h3>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+              <a href="#">Online</a>
+              <a href="#">Part Time</a>
+              <a href="#">Sales</a>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="category-link">Mobile Phones</a>
+        <a href="#" class="category-link">Cars</a>
+        <a href="#" class="category-link">Motorcycles</a>
+        <a href="#" class="category-link">Houses</a>
+        <a href="#" class="category-link">Video-Audios</a>
+        <a href="#" class="category-link">Tablets</a>
+        <a href="#" class="category-link">Land & Plots</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Section -->
+  <section class="bg-white py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center space-x-4">
+        <div class="w-1/2">
+          <img src="/mnt/data/437508562-800x600.jpeg" alt="Featured Ad" class="w-full h-full object-cover">
+        </div>
+        <div class="w-1/2 bg-blue-500 text-white p-4 rounded-lg shadow-lg text-center">
+          <h3 class="text-xl font-bold">Reach Up to 20x More Buyers!</h3>
+          <p class="text-sm mt-2">Feature your ad on OLX now!</p>
+          <button class="mt-4 bg-white text-blue-500 px-6 py-2 rounded-full font-bold">Feature Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">All Categories</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-9 gap-4">
+        
+        <!-- Category Card -->
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/mobile.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/bikes.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/books.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/kids.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/furniture.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/fashion.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/camera.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/car.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/jobs.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/rent.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/kids.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/property.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+        </a>
+
+        <!-- Category Card -->
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/car.png" alt="Cars" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Cars</h3>
+        </a>
+
+        <!-- Category Card -->
+        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+          <img src="Catagories/property.png" alt="Motorcycles" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Motorcycles</h3>
+        </a>
+
+        <!-- Add more categories here -->
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+  <section class="container mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4">Mobile Phones</h2>
+    
+    <!-- Horizontal Scrollable Product List -->
+    <div class="flex space-x-6 overflow-x-auto">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 20,000</p>
+          <p class="text-gray-700">SONY XPERIA 5</p>
+          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 92,000</p>
+          <p class="text-gray-700">iPhone 12 PRO MAX 128GB</p>
+          <p class="text-sm text-gray-500">Wapda Town Phase 2, Lahore</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 122,000</p>
+          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
+          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- Mobile Phones Section -->
+  <section class="container mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4">Mobile Phones</h2>
+    
+    <!-- Horizontal Scrollable Product List -->
+    <div class="flex space-x-6 overflow-x-auto">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 20,000</p>
+          <p class="text-gray-700">SONY XPERIA 5</p>
+          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 92,000</p>
+          <p class="text-gray-700">iPhone 12 PRO MAX 128GB</p>
+          <p class="text-sm text-gray-500">Wapda Town Phase 2, Lahore</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 122,000</p>
+          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
+          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- Mobile Phones Section -->
+  <section class="container mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4">Mobile Phones</h2>
+    
+    <!-- Horizontal Scrollable Product List -->
+    <div class="flex space-x-6 overflow-x-auto">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 20,000</p>
+          <p class="text-gray-700">SONY XPERIA 5</p>
+          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 92,000</p>
+          <p class="text-gray-700">iPhone 12 PRO MAX 128GB</p>
+          <p class="text-sm text-gray-500">Wapda Town Phase 2, Lahore</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 122,000</p>
+          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
+          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- Mobile Phones Section -->
+  <section class="container mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4">Mobile Phones</h2>
+    
+    <!-- Horizontal Scrollable Product List -->
+    <div class="flex space-x-6 overflow-x-auto">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 20,000</p>
+          <p class="text-gray-700">SONY XPERIA 5</p>
+          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 92,000</p>
+          <p class="text-gray-700">iPhone 12 PRO MAX 128GB</p>
+          <p class="text-sm text-gray-500">Wapda Town Phase 2, Lahore</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg rounded-lg min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 122,000</p>
+          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
+          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-4 md:px-0 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <!-- POPULAR CATEGORIES -->
+        <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">POPULAR CATEGORIES</h3>
+            <ul>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Cars</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Flats for rent</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Mobile Phones</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Jobs</a></li>
+            </ul>
+        </div>
+
+        <!-- TRENDING SEARCHES -->
+        <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">TRENDING SEARCHES</h3>
+            <ul>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Bikes</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Watches</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Books</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Dogs</a></li>
+            </ul>
+        </div>
+
+        <!-- ABOUT US -->
+        <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">ABOUT US</h3>
+            <ul>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">About Dubizzle Group</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">OLX Blog</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Contact Us</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">OLX for Businesses</a></li>
+            </ul>
+        </div>
+
+        <!-- OLX -->
+        <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">OLX</h3>
+            <ul>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Help</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Sitemap</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Terms of use</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline mb-2 block">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- FOLLOW US -->
+        <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">FOLLOW US</h3>
+            <div class="flex space-x-4 mb-4">
+                <a href="#"><img src="twitter-icon.png" alt="Twitter" class="h-6 w-6"></a>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook" class="h-6 w-6"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube" class="h-6 w-6"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram" class="h-6 w-6"></a>
+            </div>
+            <div class="flex space-x-4">
+                <img src="appstore-icon.png" alt="App Store" class="h-10">
+                <img src="googleplay-icon.png" alt="Google Play" class="h-10">
+                <img src="appgallery-icon.png" alt="App Gallery" class="h-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-8 text-sm text-gray-500">
+        OLX DEMO PROJECT
+    </div>
+</footer>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('categoryToggle');
+      const dropdownContent = document.getElementById('dropdownContent');
+
+      // Toggle dropdown on click
+      toggleButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        dropdownContent.classList.toggle('show');
+      });
+
+      // Hide dropdown when clicking outside
+      window.addEventListener('click', function (e) {
+        if (!dropdownContent.contains(e.target) && !toggleButton.contains(e.target)) {
+          dropdownContent.classList.remove('show');
+        }
+      });
+    });
+  </script>
+</html>
