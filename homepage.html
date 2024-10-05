@@ -84,6 +84,9 @@
 .DFF::-webkit-scrollbar {
   display: none;
 }
+.custom-scroll::-webkit-scrollbar {
+  display: none;
+}
 .center-custom{
     max-width:1230px ;
     margin: 0 auto;
@@ -93,7 +96,30 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    gap: 1em;
 }
+.custom-margin{
+  margin-top: 15px;
+}
+
+.segmented-border {
+      position: relative;
+      display: inline-block;
+      border-radius: 9999px;
+      padding: 4px; /* Space between border and button */
+      background: conic-gradient(from 0deg, #FBBF24, #14B8A6, #3B82F6);
+    }
+
+    /* Inner button with white background */
+    .inner-btn {
+      background-color: white;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 5px; /* Adjust padding for button size */
+    }
+
   </style>
 </head>
 <body class="bg-gray-100">
@@ -132,10 +158,15 @@
               </svg>
               
           </button>
-
           <div class="flex items-center space-x-4">
             <a href="#" class="text-sm font-medium text-gray-700">Login</a>
-            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">+ SELL</a>
+            <div class="segmented-border">
+              <a href="#" class="inner-btn text-blue-500 font-semibold hover:bg-gray-100">
+                <!-- Plus Icon -->
+                <span class="flex items-center justify-center h-8 w-8 text-white bg-blue-500 rounded-full mr-3">+</span>
+                SELL
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -310,81 +341,6 @@
               <a href="#">Online</a>
               <a href="#">Part Time</a>
               <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
-              <a href="#">Online</a>
-              <a href="#">Part Time</a>
-              <a href="#">Sales</a>
             </div>
             </div>
           </div>
@@ -494,13 +450,13 @@
 
   <!-- Products -->
    <!-- Mobile Phones Section -->
-   <section class="container mx-auto mt-6 px-4">
+   <section class="containers mx-auto mt-6 px-4">
     <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
   
     <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products">
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 20,000</p>
@@ -511,7 +467,27 @@
       </div>
   
       <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 82,000</p>
@@ -524,7 +500,7 @@
     
   
       <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -533,7 +509,7 @@
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -545,13 +521,15 @@
     </div>
   </section>
 
-   <section class="container mx-auto mt-6 px-4">
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+   <section class="containers mx-auto mt-6 px-4">
     <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
   
     <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products">
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 20,000</p>
@@ -562,7 +540,27 @@
       </div>
   
       <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 82,000</p>
@@ -575,7 +573,7 @@
     
   
       <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -584,7 +582,7 @@
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -596,13 +594,15 @@
     </div>
   </section>
 
-   <section class="container mx-auto mt-6 px-4">
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+   <section class="containers mx-auto mt-6 px-4">
     <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
   
     <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products">
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 20,000</p>
@@ -613,7 +613,27 @@
       </div>
   
       <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 82,000</p>
@@ -626,7 +646,7 @@
     
   
       <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -635,7 +655,7 @@
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -647,13 +667,15 @@
     </div>
   </section>
 
-   <section class="container mx-auto mt-6 px-4">
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+   <section class="containers mx-auto mt-6 px-4">
     <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
   
     <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products">
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 20,000</p>
@@ -664,7 +686,27 @@
       </div>
   
       <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
+          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 82,000</p>
@@ -677,7 +719,7 @@
     
   
       <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -686,7 +728,7 @@
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg inline-block min-w-[250px] max-w-xs">
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
         <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
           <p class="text-lg font-semibold">Rs 122,000</p>
@@ -697,9 +739,11 @@
       </div>
     </div>
   </section>
+
+
 
    <!-- KFC Section -->
-   <section class="bg-red-600 text-white py-8 text-center">
+   <section class="bg-red-600 text-white py-8 text-center custom-margin">
     <div class="container mx-auto px-4">
         <img src="kfcbanner.png" alt="KFC Advertisement" class="max-w-full h-auto mx-auto">
     </div>

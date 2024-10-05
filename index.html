@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thick Border Button</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom CSS for thick segmented border */
+    .segmented-border {
+      position: relative;
+      display: inline-block;
+      border-radius: 9999px;
+      padding: 4px; /* Space between border and button */
+      background: conic-gradient(from 0deg, #FBBF24, #14B8A6, #3B82F6);
+    }
+
+    /* Inner button with white background */
+    .inner-btn {
+      background-color: white;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 10px; /* Adjust padding for button size */
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="flex items-center space-x-4">
+    <!-- Login Link -->
+    <a href="#" class="text-sm font-medium text-gray-700">Login</a>
+
+    <!-- Segmented Border Button -->
+    <div class="segmented-border">
+      <a href="#" class="inner-btn text-blue-500 font-semibold hover:bg-gray-100">
+        <!-- Plus Icon -->
+        <span class="flex items-center justify-center h-8 w-8 text-white bg-blue-500 rounded-full mr-3">+</span>
+        SELL
+      </a>
+    </div>
+  </div>
+</body>
+</html>
