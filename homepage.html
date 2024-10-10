@@ -119,6 +119,10 @@
       justify-content: center;
       padding: 5px 5px; /* Adjust padding for button size */
     }
+    @media (max-width: 640px) {
+    .button-fix {
+       margin-bottom: 15px;
+    }
 
   </style>
 </head>
@@ -152,7 +156,7 @@
             <input type="text" placeholder="Find Cars, Mobile Phones and more..." class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
           </div>
 
-          <button class="bg-green-500 text-white px-4 py-2 rounded-md mr-4">
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md mr-4 button-fix">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
               </svg>
@@ -378,68 +382,68 @@
   <section class="py-12 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-bold text-gray-800 mb-8">All Categories</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-9 gap-4">
+      <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9 2xl:grid-cols-9 gap-4">
         
         <!-- Category Card -->
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+        <a href="#" class="block p-4 rounded-lg text-center">
           <img src="Catagories/mobile.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+          <h3 class="text-lg font-medium text-gray-700">Mobiles</h3>
         </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/bikes.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/books.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/kids.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/furniture.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/fashion.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/camera.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+        <a href="#" class="block p-4 rounded-lg text-center">
           <img src="Catagories/car.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+          <h3 class="text-lg font-medium text-gray-700">Vehicles</h3>
         </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/jobs.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/rent.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/kids.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
-        </a>
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
+        <a href="#" class="block p-4 rounded-lg text-center">
           <img src="Catagories/property.png" alt="Mobile Phones" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Mobile Phones</h3>
+          <h3 class="text-lg font-medium text-gray-700">Property For Sale</h3>
+        </a>
+        <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/rent.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Property For Rent</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/camera.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Electronics</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/bikes.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Bikes</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/agricultural.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Industrials & Agriculture</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/services.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Services</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/jobs.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Jobs</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/animals.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Animals</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/furniture.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Futniture & Home Decor</h3>
+        </a>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/fashion.png" alt="Mobile Phones" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Fashion & Beauty</h3>
         </a>
 
         <!-- Category Card -->
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/car.png" alt="Cars" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Cars</h3>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/books.png" alt="Cars" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Books, Sports & Hobbies</h3>
         </a>
 
         <!-- Category Card -->
-        <a href="#" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg text-center">
-          <img src="Catagories/property.png" alt="Motorcycles" class="mx-auto mb-2">
-          <h3 class="text-lg font-medium text-gray-700">Motorcycles</h3>
+           <a href="#" class="block p-4 rounded-lg text-center">
+          <img src="Catagories/kids.png" alt="Motorcycles" class="mx-auto mb-2">
+          <h3 class="text-lg font-medium text-gray-700">Kids</h3>
         </a>
 
         <!-- Add more categories here -->
@@ -457,9 +461,9 @@
     <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/mobilepic1.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 20,000</p>
+          <p class="text-lg font-semibold">Rs 25,000</p>
           <p class="text-gray-700">SONY XPERIA 5</p>
           <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
           <p class="text-sm text-gray-500">3 weeks ago</p>
@@ -468,31 +472,178 @@
   
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/mobilepic2.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-lg font-semibold">Rs 70,000</p>
           <p class="text-gray-700">Samsung S20 Ultra dotted</p>
           <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-sm text-gray-500">3 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/mobilepic3.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 82,000</p>
+          <p class="text-gray-700">
+            Oneplus 9, 8, 8 Pro</p>
+          <p class="text-sm text-gray-500">Allama Iqbal Town, Lahore</p>
+          <p class="text-sm text-gray-500">2 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/mobilepic4.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 65,000</p>
+          <p class="text-gray-700">iphone 12 pro max<p>
+          <p class="text-sm text-gray-500">Commercial Market, Rawalpindi</p>
+          <p class="text-sm text-gray-500">1 week ago</p>
+        </div>
+      </div>
+  
+    
+  
+      <!-- Product Card 5 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/mobilepic5.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 90,000</p>
+          <p class="text-gray-700">Sony phones avaliable</p>
+          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-sm text-gray-500">1 days ago</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/mobilepic6.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 122,000</p>
+          <p class="text-gray-700">Samsung Galaxy Flip 3</p>
+          <p class="text-sm text-gray-500">Ghauri Town, Islamabad</p>
+          <p class="text-sm text-gray-500">12 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+   <section class="containers mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4 center-custom">Cars</h2>
+  
+    <!-- Horizontal Scrollable Product List -->
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/carpic1.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 4,800,000</p>
+          <p class="text-gray-700">Honda Civic Oriel 2021 1.8</p>
+          <p class="text-sm text-gray-500">KDA Kohat, Kohat</p>
+          <p class="text-sm text-gray-500">3 weeks ago</p>
+        </div>
+      </div>
+  
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/carpic2.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 6,500,000</p>
+          <p class="text-gray-700">Toyota Prius GS 1.8</p>
+          <p class="text-sm text-gray-500">North Nazimabad, Karachi</p>
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/carpic3.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
+          <p class="text-lg font-semibold">Rs 7,720,000</p>
+          <p class="text-gray-700">Honda Civic Oriel 2022</p>
+          <p class="text-sm text-gray-500">Allama Iqbal Colony, Sialkot</p>
+          <p class="text-sm text-gray-500">3 days ago</p>
         </div>
       </div>
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/carpic4.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-lg font-semibold">Rs 2,780,000</p>
+          <p class="text-gray-700">Toyota Corolla XLI 2013</p>
+          <p class="text-sm text-gray-500">Baizo Kharki, Malakand</p>
+          <p class="text-sm text-gray-500">1 day ago</p>
+        </div>
+      </div>
+  
+    
+  
+      <!-- Product Card 4 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/carpic5.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 6,850,000</p>
+          <p class="text-gray-700">MG ZS 2021</p>
+          <p class="text-sm text-gray-500">KDA Kohat, Kohat</p>
+          <p class="text-sm text-gray-500">4 days ago</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/carpic6.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 4,750,000</p>
+          <p class="text-gray-700">Toyota Corolla GLI 2020</p>
+          <p class="text-sm text-gray-500">Peshawar Road, Kohat</p>
+          <p class="text-sm text-gray-500">6 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+   <!-- Mobile Phones Section -->
+   <section class="containers mx-auto mt-6 px-4">
+    <h2 class="text-xl font-semibold mb-4 center-custom">Bikes</h2>
+  
+    <!-- Horizontal Scrollable Product List -->
+    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
+      <!-- Product Card 1 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/bikepic1.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 3,20,000</p>
+          <p class="text-gray-700">HONDA CB 150F (2022) MODEL</p>
+          <p class="text-sm text-gray-500">GT Road, Okara</p>
+          <p class="text-sm text-gray-500">1 day ago</p>
+        </div>
+      </div>
+  
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/bikepic2.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 4,80,000</p>
+          <p class="text-gray-700">Yamaha YB 125Z-DX 2024</p>
+          <p class="text-sm text-gray-500">Federal B Area, Karachi</p>
+          <p class="text-sm text-gray-500">3 days ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/bikepicnew.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 1,50,000</p>
+          <p class="text-gray-700">Honda 125 2022 model</p>
+          <p class="text-sm text-gray-500">Rehmania Town, Faisalabad</p>
+          <p class="text-sm text-gray-500">1 day ago</p>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
+        <img src="Catagories/bikepic4.png" alt="Product Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-lg font-semibold">Rs 1,180,000</p>
+          <p class="text-gray-700">Docuati 400cc fresh import</p>
+          <p class="text-sm text-gray-500">Bahria Town Phase 4, Rawalpindi</p>
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
@@ -501,21 +652,21 @@
   
       <!-- Product Card 4 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/bikepic5.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
+          <p class="text-lg font-semibold">Rs 2,40,000</p>
+          <p class="text-gray-700">cb 125f model 2024 </p>
           <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/bikepic6.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
+          <p class="text-lg font-semibold">Rs 3,75,000</p>
+          <p class="text-gray-700">SUZUKI GS 150 OCT-2021</p>
+          <p class="text-sm text-gray-500">Lahore Road, Sargodha</p>
+          <p class="text-sm text-gray-500">3 days ago</p>
         </div>
       </div>
     </div>
@@ -530,43 +681,43 @@
     <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
       <!-- Product Card 1 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic5.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 20,000</p>
-          <p class="text-gray-700">SONY XPERIA 5</p>
-          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
+          <p class="text-lg font-semibold">Rs 7,43,000,000</p>
+          <p class="text-gray-700">House For Sale</p>
+          <p class="text-sm text-gray-500">17 , IslamabadF</p>
           <p class="text-sm text-gray-500">3 weeks ago</p>
         </div>
       </div>
   
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic2.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
+          <p class="text-lg font-semibold">Rs 15,000,000</p>
+          <p class="text-gray-700">5 malra house Park View City</p>
+          <p class="text-sm text-gray-500">ASC Housing Society, Nowshera</p>
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic3.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
+          <p class="text-lg font-semibold">Rs 40,000,000</p>
+          <p class="text-gray-700">Brand New 7 Marla House</p>
+          <p class="text-sm text-gray-500">I-9, Islamabad</p>
+          <p class="text-sm text-gray-500">2 days ago</p>
         </div>
       </div>
       <!-- Product Card 2 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic6.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
+          <p class="text-lg font-semibold">Rs 24,000,000</p>
+          <p class="text-gray-700">10 Marla Single Story</p>
+          <p class="text-sm text-gray-500">ASC Housing Society, Nowshera</p>
+          <p class="text-sm text-gray-500">1 day ago</p>
         </div>
       </div>
   
@@ -574,166 +725,20 @@
   
       <!-- Product Card 4 -->
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic8.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
+          <p class="text-lg font-semibold">Rs 70,000,000</p>
+          <p class="text-gray-700">1 kanal house for sale</p>
+          <p class="text-sm text-gray-500">F-17, Islamabad</p>
+          <p class="text-sm text-gray-500">2 weeks ago</p>
         </div>
       </div>
       <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+        <img src="Catagories/housepic1.png" alt="Product Image" class="w-full h-48 object-cover">
         <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-   <!-- Mobile Phones Section -->
-   <section class="containers mx-auto mt-6 px-4">
-    <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
-  
-    <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
-      <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 20,000</p>
-          <p class="text-gray-700">SONY XPERIA 5</p>
-          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
-          <p class="text-sm text-gray-500">3 weeks ago</p>
-        </div>
-      </div>
-  
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-  
-    
-  
-      <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-   <!-- Mobile Phones Section -->
-   <section class="containers mx-auto mt-6 px-4">
-    <h2 class="text-xl font-semibold mb-4 center-custom">Mobile Phones</h2>
-  
-    <!-- Horizontal Scrollable Product List -->
-    <div class="overflow-x-auto overflow-y-hidden whitespace-nowrap center-custom custom-products custom-scroll">
-      <!-- Product Card 1 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 20,000</p>
-          <p class="text-gray-700">SONY XPERIA 5</p>
-          <p class="text-sm text-gray-500">Landhi 2, Karachi</p>
-          <p class="text-sm text-gray-500">3 weeks ago</p>
-        </div>
-      </div>
-  
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 82,000</p>
-          <p class="text-gray-700">Samsung S20 Ultra dotted</p>
-          <p class="text-sm text-gray-500">Satellite Town, Rawalpindi</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-  
-    
-  
-      <!-- Product Card 4 -->
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
-          <p class="text-sm text-gray-500">6 days ago</p>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg inline-block min-w-[250px] max-w-xs">
-        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <p class="text-lg font-semibold">Rs 122,000</p>
-          <p class="text-gray-700">Iphone 11 128GB PTA Approved</p>
-          <p class="text-sm text-gray-500">Ashraf Road, Peshawar</p>
+          <p class="text-lg font-semibold">Rs 42,000,000</p>
+          <p class="text-gray-700">Triple Story House For Sale</p>
+          <p class="text-sm text-gray-500">Top City 1 - Block A, Islamabad</p>
           <p class="text-sm text-gray-500">6 days ago</p>
         </div>
       </div>
